@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox,Menu
-
+import sys
 ventana = tk.Tk()
 ventana.geometry('600x400')
 ventana.title('manejo de componentes')
@@ -22,6 +22,13 @@ def enviar():
     if mensaje1:
         messagebox.showinfo('Mensaje informativo ', mensaje1 + 'informativo')
 
+def salir():
+    ventana.quit()
+    ventana.destroy()
+    print('Salimos')
+    sys.exit()
+
+
 def crear_menu():
     #configurar el menu principal 
     menuprincipal= Menu(ventana)
@@ -29,8 +36,18 @@ def crear_menu():
     submenu_archivo = Menu(menuprincipal, tearoff=0)
     #agregamos una nueva opcion al menu de archivo 
     submenu_archivo.add_command(label='Nuevo')
+    #agregar un separador 
+    submenu_archivo.add_separator()
+    #agregamos la opcion salir
+    submenu_archivo.add_command(label='salir',command=salir)
     #agregamos el submenu al menu
     menuprincipal.add_cascade(menu=submenu_archivo, label='Archivo')
+    #submenu ayuda
+    submenu_ayuda =Menu(menuprincipal,tearoff=0)
+    #agregamoas una opcion de submenu
+    submenu_ayuda.add_command(label='Acerca De')
+    #agregamos al menu principal este nuevo menu
+    menuprincipal.add_cascade(menu=submenu_ayuda,label='Ayuda')    
     #mostramos el muenu en la ventana principal 
     ventana.config(menu=menuprincipal)
 
