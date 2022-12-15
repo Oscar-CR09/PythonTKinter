@@ -1,6 +1,11 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
+#class Login(tk.Tk):
+#    def __init__(self):
+#        super().__init__()
+
+
 #ventana principal
 ventana=tk.Tk()
 ventana.geometry('300x150')
