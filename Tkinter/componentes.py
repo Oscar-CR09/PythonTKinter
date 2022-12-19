@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
 from time import sleep
+
+
+
 ventana = tk.Tk()
 ventana.geometry('600x400+700+300')
 ventana.title('Componentes')
